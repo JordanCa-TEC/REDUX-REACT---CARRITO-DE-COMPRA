@@ -45,14 +45,16 @@ describe('Cart Component', () => {
         <Cart />
       </Provider>
     );
-
-    // Find the remove button for Product A and click it
-    const removeButton = screen.getByText(/Quitar del carrito/i);
-    fireEvent.click(removeButton);
-
-    // Check if the removeFromCart action is dispatched
+  
+    const removeButtons = screen.getAllByText(/Quitar del carrito/i);
+  
+    expect(removeButtons.length).toBe(2);
+  
+    fireEvent.click(removeButtons[0]);
+  
     expect(store.dispatch).toHaveBeenCalledWith(removeFromCart({ name: 'Product A', price: 10 }));
   });
+  
 
   test('displays empty cart message when cart is empty', () => {
     store = mockStore({
