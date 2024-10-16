@@ -1,6 +1,6 @@
 import { createStore } from 'redux';
 import rootReducer from './path_to_your_store_file'; 
-import { ADD_TO_CART, REMOVE_FROM_CART } from './actions'; 
+import { ADD_TO_CART, REMOVE_FROM_CART } from '../actions'; 
 
 describe('Redux Store', () => {
   let store;

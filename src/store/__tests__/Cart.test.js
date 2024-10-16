@@ -2,8 +2,8 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
-import Cart from './Cart';
-import { removeFromCart } from './actions';
+import Cart from '../Cart';
+import { removeFromCart } from '../actions';
 
 // Creador de tienda simulada
 const mockStore = configureStore([]);
